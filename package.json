@@ -1,0 +1,13 @@
+{
+  "name": "jev-computer-use",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Gate any agent's actions — Claude Code, Codex, opencode, or a computer-use loop — with a typed, calibrated Jev safety decision.",
+  "bin": {
+    "jev-gate": "./gate.mjs"
+  },
+  "scripts": {
+    "demo": "node example-loop.mjs"
+  },
+  "license": "MIT"
+}
