@@ -22,6 +22,17 @@ cp .env.example .env   # add your jv_live_ key (get one at jevtypesafeai.com/pri
 
 No build step — it's one file (`gate.mjs`) with zero dependencies (Node 18+ for `fetch`).
 
+## 0. Drop-in (no code)
+
+Don't want to wire anything? Copy a ready-made instruction file into your agent:
+
+- **Claude Code** → copy [`skills/jev-gate/SKILL.md`](skills/jev-gate/SKILL.md) into `.claude/skills/jev-gate/SKILL.md`
+- **Codex / opencode** → paste [`AGENTS.md`](AGENTS.md) into your `AGENTS.md` / rules file
+
+Both tell the agent to check risky actions with Jev's `decide` tool before running them.
+Give it the tool once with `npx github:codaaiteam/jev-mcp` (needs `JEV_API_KEY`). For a
+hard gate the agent can't skip, use the PreToolUse hook in section 2 instead.
+
 ## 1. Your own loop (Codex / opencode / computer-use models)
 
 ```js
